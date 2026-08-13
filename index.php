@@ -1,27 +1,14 @@
 <?php
 
 require 'config/database.php';
-echo "Koneksi database berhasil!";
 
 echo "Manajemen Siswa";
 
+$sql = "SELECT * FROM students";
 
-$students = [
-    [
-        'nis' => '25001',
-        'name' => 'Andi',
-        'class' => 'XI RPL 1'
-    ],
-    [
-        'nis' => '25002',
-        'name' => 'Siti',
-        'class' => 'XI RPL 1'
-    ],
-];
+$stmt = $pdo->query($sql);
 
-foreach ($students as $student) {
-    echo $student['name'];
-}
+$students = $stmt->fetchAll();
 
 ?>
 
@@ -53,7 +40,7 @@ foreach ($students as $student) {
                     <td><?= $index + 1 ?></td>
                     <td><?= $student['nis'] ?></td>
                     <td><?= $student['name'] ?></td>
-                    <td><?= $student['class'] ?></td>
+                    <td><?= $student['class_name'] ?></td>
                 </tr>
 
             <?php endforeach; ?>
