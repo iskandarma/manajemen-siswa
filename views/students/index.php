@@ -1,3 +1,5 @@
+<?php require 'views/layouts/header.php'; ?>
+
 <h1>Daftar Siswa</h1>
 
 <table border="1" cellpadding="10">
@@ -32,3 +34,4 @@
 
 </table>
 
+<?php require 'views/layouts/footer.php'; ?>
