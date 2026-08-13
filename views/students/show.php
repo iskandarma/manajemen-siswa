@@ -1,3 +1,5 @@
+<?php require __DIR__ . '/../layouts/header.php'; ?>
+
 <h1>Detail Siswa</h1>
 
 <p>
@@ -19,3 +21,9 @@
     Jurusan:
     <?= $student['major'] ?>
 </p>
+
+<a href="index.php">
+    ← Kembali
+</a>
+
+<?php require __DIR__ . '/../layouts/footer.php'; ?>

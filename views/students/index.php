@@ -12,6 +12,7 @@
             <th>Jenis Kelamin</th>
             <th>Kelas</th>
             <th>Jurusan</th>
+            <th>Aksi</th>
         </tr>
     </thead>
 
@@ -26,6 +27,11 @@
                 <td><?= $student['gender'] ?></td>
                 <td><?= $student['class_name'] ?></td>
                 <td><?= $student['major'] ?></td>
+                <td>
+                    <a href="student.php?id=<?= $student['id'] ?>">
+                        Detail
+                    </a>
+                </td>
             </tr>
 
         <?php endforeach; ?>
