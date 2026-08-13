@@ -1,6 +1,10 @@
 <?php
 
+require 'config/database.php';
+echo "Koneksi database berhasil!";
+
 echo "Manajemen Siswa";
+
 
 $students = [
     [
