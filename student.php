@@ -14,4 +14,9 @@ $stmt->execute([
 
 $student = $stmt->fetch();
 
+if (!$student) {
+    echo "Data siswa tidak ditemukan.";
+    exit;
+}
+
 require __DIR__ . '/views/students/show.php';
