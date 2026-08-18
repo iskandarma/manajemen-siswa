@@ -1,12 +1,11 @@
 <?php
 
 require 'config/database.php';
+require __DIR__ . '/models/Student.php';
 
-$sql = "SELECT * FROM students";
+$studentModel = new Student($pdo);
 
-$stmt = $pdo->query($sql);
-
-$students = $stmt->fetchAll();
+$students = $studentModel->getAll();
 
 require 'views/students/index.php';
 
