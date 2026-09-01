@@ -2,6 +2,10 @@
 
 <h1>Daftar Siswa</h1>
 
+<a href="create.php">
+    + Tambah Siswa
+</a>
+
 <table border="1" cellpadding="10">
 
     <thead>
@@ -30,6 +34,12 @@
                 <td>
                     <a href="student.php?id=<?= $student['id'] ?>">
                         Detail
+                    </a>
+                    <a href="edit.php?id=<?= $student['id'] ?>">
+                        Edit
+                    </a>
+                    <a href="delete.php?id=<?= $student['id'] ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus siswa ini?')">
+                        Hapus
                     </a>
                 </td>
             </tr>

@@ -27,4 +27,27 @@ class StudentController
 
         require __DIR__ . '/../views/students/show.php';
     }
+
+    public function create()
+    {
+        require __DIR__ . '/../views/students/create.php';
+    }
+
+    public function store()
+    {
+        $data = [
+            'nis' => $_POST['nis'],
+            'name' => $_POST['name'],
+            'gender' => $_POST['gender'],
+            'class_name' => $_POST['class_name'],
+            'major' => $_POST['major'],
+            'birth_place' => $_POST['birth_place'],
+            'birth_date' => $_POST['birth_date'],
+        ];
+
+        $this->studentModel->create($data);
+
+        header('Location: index.php');
+        exit;
+    }
 }

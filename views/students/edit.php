@@ -1,0 +1,120 @@
+<?php require __DIR__ . '/../layouts/header.php'; ?>
+
+<h1>Edit Data Siswa</h1>
+
+<p>Silakan ubah data siswa berikut.</p>
+
+<form action="update.php?id=<?= $student['id'] ?>" method="POST">
+
+    <table cellpadding="8">
+
+        <tr>
+            <td>
+                <label for="nis">NIS</label>
+            </td>
+            <td>
+                <input
+                    type="text"
+                    id="nis"
+                    name="nis"
+                    value="<?= htmlspecialchars($student['nis']) ?>"
+                    required
+                >
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="name">Nama</label>
+            </td>
+            <td>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value="<?= htmlspecialchars($student['name']) ?>"
+                    required
+                >
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Jenis Kelamin</label>
+            </td>
+            <td>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="L"
+                        <?= $student['gender'] === 'L' ? 'checked' : '' ?>
+                        required
+                    >
+                    Laki-laki
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="P"
+                        <?= $student['gender'] === 'P' ? 'checked' : '' ?>
+                    >
+                    Perempuan
+                </label>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="class_name">Kelas</label>
+            </td>
+            <td>
+                <input
+                    type="text"
+                    id="class_name"
+                    name="class_name"
+                    value="<?= htmlspecialchars($student['class_name']) ?>"
+                    required
+                >
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="major">Jurusan</label>
+            </td>
+            <td>
+                <input
+                    type="text"
+                    id="major"
+                    name="major"
+                    value="<?= htmlspecialchars($student['major']) ?>"
+                    required
+                >
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+
+                <button type="submit">
+                    Update
+                </button>
+
+                <a href="index.php">
+                    Batal
+                </a>
+
+            </td>
+        </tr>
+
+    </table>
+
+</form>
+
+<?php require __DIR__ . '/../layouts/footer.php'; ?>
