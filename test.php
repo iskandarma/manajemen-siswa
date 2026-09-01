@@ -31,9 +31,9 @@ $studentModel = new Student($pdo);
 //     'birth_place' => 'Bandung'
 // ]);
 
-$result = $studentModel->delete(5);
+// $result = $studentModel->delete(5);
 
-var_dump($result);
+// var_dump($result);
 $students = $studentModel->getAll();
 
 echo '<pre>';

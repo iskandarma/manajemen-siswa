@@ -2,6 +2,7 @@
 
 require __DIR__ . '/config/database.php';
 require __DIR__ . '/models/Student.php';
+require __DIR__ . '/controllers/StudentController.php';
 
 $id = $_GET['id'] ?? null;
 
@@ -9,9 +10,8 @@ $studentModel = new Student($pdo);
 
 $student = $studentModel->find($id);
 
-if (!$student) {
-    echo "Data siswa tidak ditemukan.";
-    exit;
-}
+$controller = new StudentController($studentModel);
 
-require __DIR__ . '/views/students/show.php';
+$id = $_GET['id'] ?? null;
+
+$controller->show($id);

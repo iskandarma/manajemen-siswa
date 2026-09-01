@@ -2,12 +2,13 @@
 
 require 'config/database.php';
 require __DIR__ . '/models/Student.php';
+require __DIR__ . '/controllers/StudentController.php';
 
 // Create an instance of the Student model 
 $studentModel = new Student($pdo);
 
-$students = $studentModel->getAll();
+$controller = new StudentController($studentModel);
 
-require 'views/students/index.php';
+$controller->index();
 
 ?>
