@@ -1,18 +1,13 @@
 <?php
 
 require __DIR__ . '/config/database.php';
+require __DIR__ . '/models/Student.php';
 
 $id = $_GET['id'] ?? null;
 
-$sql = "SELECT * FROM students WHERE id = :id";
+$studentModel = new Student($pdo);
 
-$stmt = $pdo->prepare($sql);
-
-$stmt->execute([
-    'id' => $id
-]);
-
-$student = $stmt->fetch();
+$student = $studentModel->find($id);
 
 if (!$student) {
     echo "Data siswa tidak ditemukan.";

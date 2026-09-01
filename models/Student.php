@@ -17,4 +17,17 @@ class Student
 
         return $stmt->fetchAll();
     }
+
+    public function find($id)
+    {
+        $sql = "SELECT * FROM students WHERE id = :id";
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->execute([
+            'id' => $id
+        ]);
+
+        return $stmt->fetch();
+    }
 }
