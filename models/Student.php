@@ -52,31 +52,31 @@ class Student
     }
 
     public function update($id, $data)
-    {
-        $sql = "UPDATE students
+{
+    $sql = "UPDATE students
             SET
                 nis = :nis,
                 name = :name,
+                birth_place = :birth_place,
+                birth_date = :birth_date,
                 gender = :gender,
                 class_name = :class_name,
-                major = :major,
-                birth_date = :birth_date,
-                birth_place = :birth_place
+                major = :major
             WHERE id = :id";
 
-        $stmt = $this->pdo->prepare($sql);
+    $stmt = $this->pdo->prepare($sql);
 
-        return $stmt->execute([
-            'id' => $id,
-            'nis' => $data['nis'],
-            'name' => $data['name'],
-            'gender' => $data['gender'],
-            'class_name' => $data['class_name'],
-            'major' => $data['major'],
-            'birth_date' => $data['birth_date'],
-            'birth_place' => $data['birth_place']
-        ]);
-    }
+    return $stmt->execute([
+        'id' => $id,
+        'nis' => $data['nis'],
+        'name' => $data['name'],
+        'birth_place' => $data['birth_place'],
+        'birth_date' => $data['birth_date'],
+        'gender' => $data['gender'],
+        'class_name' => $data['class_name'],
+        'major' => $data['major']
+    ]);
+}
 
     public function delete($id)
     {

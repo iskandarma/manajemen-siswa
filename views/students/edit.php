@@ -4,7 +4,7 @@
 
 <p>Silakan ubah data siswa berikut.</p>
 
-<form action="update.php?id=<?= $student['id'] ?>" method="POST">
+<form action="edit.php?id=<?= $student['id'] ?>" method="POST">
 
     <table cellpadding="8">
 
@@ -18,8 +18,7 @@
                     id="nis"
                     name="nis"
                     value="<?= htmlspecialchars($student['nis']) ?>"
-                    required
-                >
+                    required>
             </td>
         </tr>
 
@@ -33,8 +32,35 @@
                     id="name"
                     name="name"
                     value="<?= htmlspecialchars($student['name']) ?>"
-                    required
-                >
+                    required>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="birth_place">Tempat Lahir</label>
+            </td>
+            <td>
+                <input
+                    type="text"
+                    id="birth_place"
+                    name="birth_place"
+                    value="<?= htmlspecialchars($student['birth_place']) ?>"
+                    required>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="birth_date">Tanggal Lahir</label>
+            </td>
+            <td>
+                <input
+                    type="date"
+                    id="birth_date"
+                    name="birth_date"
+                    value="<?= htmlspecialchars($student['birth_date']) ?>"
+                    required>
             </td>
         </tr>
 
@@ -50,8 +76,7 @@
                         name="gender"
                         value="L"
                         <?= $student['gender'] === 'L' ? 'checked' : '' ?>
-                        required
-                    >
+                        required>
                     Laki-laki
                 </label>
 
@@ -60,8 +85,7 @@
                         type="radio"
                         name="gender"
                         value="P"
-                        <?= $student['gender'] === 'P' ? 'checked' : '' ?>
-                    >
+                        <?= $student['gender'] === 'P' ? 'checked' : '' ?>>
                     Perempuan
                 </label>
 
@@ -78,8 +102,7 @@
                     id="class_name"
                     name="class_name"
                     value="<?= htmlspecialchars($student['class_name']) ?>"
-                    required
-                >
+                    required>
             </td>
         </tr>
 
@@ -93,8 +116,7 @@
                     id="major"
                     name="major"
                     value="<?= htmlspecialchars($student['major']) ?>"
-                    required
-                >
+                    required>
             </td>
         </tr>
 

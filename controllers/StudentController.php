@@ -50,4 +50,34 @@ class StudentController
         header('Location: index.php');
         exit;
     }
+
+    public function edit($id)
+    {
+        $student = $this->studentModel->find($id);
+
+        if (!$student) {
+            echo "Data siswa tidak ditemukan.";
+            exit;
+        }
+
+        require __DIR__ . '/../views/students/edit.php';
+    }
+
+    public function update($id)
+    {
+        $data = [
+            'nis' => $_POST['nis'],
+            'name' => $_POST['name'],
+            'birth_place' => $_POST['birth_place'] ?? null,
+            'birth_date' => $_POST['birth_date'] ?? null,
+            'gender' => $_POST['gender'],
+            'class_name' => $_POST['class_name'],
+            'major' => $_POST['major']
+        ];
+
+        $this->studentModel->update($id, $data);
+
+        header('Location: index.php');
+        exit;
+    }
 }
