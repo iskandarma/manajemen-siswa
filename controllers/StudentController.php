@@ -47,7 +47,8 @@ class StudentController
 
         $this->studentModel->create($data);
 
-        header('Location: index.php');
+         // header('Location: /manajemen-siswa/students');
+        header('Location: /students');
         exit;
     }
 
@@ -77,7 +78,8 @@ class StudentController
 
         $this->studentModel->update($id, $data);
 
-        header('Location: index.php');
+        // header('Location: /manajemen-siswa/students');
+        header('Location: /students');
         exit;
     }
 
@@ -85,7 +87,8 @@ class StudentController
     {
         $this->studentModel->delete($id);
 
-        header('Location: index.php');
+        // header('Location: /manajemen-siswa/students');
+        header('Location: /students');
         exit;
     }
 }

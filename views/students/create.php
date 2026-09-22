@@ -2,7 +2,7 @@
 
 <h1>Tambah Siswa</h1>
 
-<form action="create.php" method="POST">
+<form action="/students" method="POST">
 
     <p>
         <label>NIS</label><br>
@@ -86,7 +86,7 @@
             Simpan
         </button>
 
-        <a href="index.php">
+        <a href="/students">
             Batal
         </a>
     </p>

@@ -4,7 +4,7 @@
 
 <p>Silakan ubah data siswa berikut.</p>
 
-<form action="edit.php?id=<?= $student['id'] ?>" method="POST">
+<form action="/students/update?id=<?= $student['id'] ?>" method="POST">
 
     <table cellpadding="8">
 
@@ -128,7 +128,7 @@
                     Update
                 </button>
 
-                <a href="index.php">
+                <a href="/students">
                     Batal
                 </a>
 

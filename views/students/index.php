@@ -2,7 +2,7 @@
 
 <h1>Daftar Siswa</h1>
 
-<a href="create.php">
+<a href="/students/create">
     + Tambah Siswa
 </a>
 
@@ -32,13 +32,13 @@
                 <td><?= $student['class_name'] ?></td>
                 <td><?= $student['major'] ?></td>
                 <td>
-                    <a href="student.php?id=<?= $student['id'] ?>">
+                    <a href="/students/show?id=<?= $student['id'] ?>">
                         Detail
                     </a>
-                    <a href="edit.php?id=<?= $student['id'] ?>">
+                    <a href="/students/edit?id=<?= $student['id'] ?>">
                         Edit
                     </a>
-                    <a href="delete.php?id=<?= $student['id'] ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus siswa ini?')">
+                    <a href="/students/delete?id=<?= $student['id'] ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus siswa ini?')">
                         Hapus
                     </a>
                 </td>

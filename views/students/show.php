@@ -22,7 +22,7 @@
     <?= $student['major'] ?>
 </p>
 
-<a href="index.php">
+<a href="/students">
     ← Kembali
 </a>
 
