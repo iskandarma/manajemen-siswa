@@ -80,4 +80,12 @@ class StudentController
         header('Location: index.php');
         exit;
     }
+
+    public function destroy($id)
+    {
+        $this->studentModel->delete($id);
+
+        header('Location: index.php');
+        exit;
+    }
 }
